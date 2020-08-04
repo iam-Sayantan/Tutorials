@@ -4,3 +4,6 @@
 [submodule "XSLT_XPATH_XQUERY"]
 	path = XSLT_XPATH_XQUERY
 	url = https://github.com/iam-Sayantan/XSLT_XPATH_XQUERY.git
+[submodule "JSP_SERVLETS_JDBC"]
+	path = JSP_SERVLETS_JDBC
+	url = https://github.com/iam-Sayantan/JSP_SERVLETS_JDBC.git
