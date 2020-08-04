@@ -1,3 +1,6 @@
 [submodule "XML-101"]
 	path = XML-101
 	url = https://github.com/iam-Sayantan/XML-101.git
+[submodule "XSLT_XPATH_XQUERY"]
+	path = XSLT_XPATH_XQUERY
+	url = https://github.com/iam-Sayantan/XSLT_XPATH_XQUERY.git
