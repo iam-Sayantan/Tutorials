@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,13 +40,18 @@ public class StudentRestController {
 
 		return theStudents;
 	}
-	
+
 	// define endpoint for "/students/{studentId}" - return student at index
-	
+
 	@GetMapping("/students/{studentId}")
-	public Student getStudent(@PathVariable int studentId) { //By default, variables should match;
-		
-		// Just index into the list 
-		return theStudents.get(studentId); //theStudents is the name of the list
+	public Student getStudent(@PathVariable int studentId) { // By default, variables should match;
+
+		// Just index into the list
+		// check the studentId against the list size
+		if ((studentId >= theStudents.size()) || (studentId < 0)) {
+			throw new StudentNotFoundException("Student Id not found - " + studentId);
+		}
+		return theStudents.get(studentId); // theStudents is the name of the list
 	}
+
 }
