@@ -1,5 +1,6 @@
 # Tutorials 
 # For Learning Purposes
+# [NOTE - COMMENTS ARE MESSED UP UPTO 6]
 1.XML Basics (Notes Included)
 2.XSLT, XPATH, XQUERY (Notes Included)
 3.JSP, SERVLETS, JDBC (Notes Included)
