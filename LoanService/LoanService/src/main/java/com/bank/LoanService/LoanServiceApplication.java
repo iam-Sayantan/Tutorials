@@ -1,15 +1,17 @@
-package com.bank.bankingRetail;
+package com.bank.LoanService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class BankingRetailApplication {
+@EnableFeignClients
+public class LoanServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BankingRetailApplication.class, args);
+		SpringApplication.run(LoanServiceApplication.class, args);
 	}
 
 }

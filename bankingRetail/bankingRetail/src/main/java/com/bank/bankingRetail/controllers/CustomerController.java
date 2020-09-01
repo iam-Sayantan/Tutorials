@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bank.bankingRetail.entity.Customer;
 
 @RestController
-@RequestMapping("/bank")
+//@RequestMapping("/bank")
 public class CustomerController {
 	private List<Customer> theCustomer;
 
@@ -41,7 +41,7 @@ public class CustomerController {
 
 	// define end point for "/customers/{customerId}" - return customer at index
 	@GetMapping("/customers/{customerId}")
-	public Customer showCustomer(@PathVariable int customerId) {
+	public Customer showCustomerById(@PathVariable int customerId) {
 		// Just index into the list
 		// check the customerId against the list size
 //      if ((customerId >= theCustomer.size()) || (customerId < 0)) {
