@@ -3,7 +3,6 @@ package com.bank.LoanService.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bank.LoanService.entity.Customer;
@@ -22,6 +21,8 @@ public class LoanController {
 		if(cust.isLoan()) {
 			return "Loan not sanctioned";
 		} else {
+			cust.setLoan(true);
+//			repo.setLoanCustomer(cust,loanId);
 			return "Loan sanctioned";
 		}
 	}

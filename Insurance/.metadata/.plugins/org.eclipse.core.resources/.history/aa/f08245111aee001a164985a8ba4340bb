@@ -1,0 +1,3 @@
+spring.application.name=Insurance-Service
+server.port=9009
+

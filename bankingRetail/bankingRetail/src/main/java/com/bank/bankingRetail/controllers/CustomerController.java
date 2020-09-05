@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bank.bankingRetail.entity.Customer;
 
 @RestController
-//@RequestMapping("/bank")
+@RequestMapping("/bank")
 public class CustomerController {
 	private List<Customer> theCustomer;
 
@@ -70,4 +70,11 @@ public class CustomerController {
 		theCustomer.remove(customerId - 1);
 		return "Customer Deleted Successfully";
 	}
+	
+//	@PutMapping("/loanUpdateCustomer")
+//	public String setLoanCustomer(Customer editCustomer, int customerId) {
+//		theCustomer.set(customerId - 1, editCustomer);
+//		return "Customer information updated successfully!!";
+//	}
+	
 }
