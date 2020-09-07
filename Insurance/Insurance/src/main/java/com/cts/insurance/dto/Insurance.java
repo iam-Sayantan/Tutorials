@@ -7,7 +7,6 @@ public class Insurance {
 	private String insurance_name;
 	private String insurance_type;
 	
-	
 	// No Parameterized constructor
 	public Insurance() {
 		insurance_id= Long.toString(System.currentTimeMillis());
@@ -65,5 +64,10 @@ public class Insurance {
 		this.customer_id = customer_id;
 	}
 
+	@Override
+	public String toString() {
+		return "Insurance [insurance_id=" + insurance_id + ", customer_id=" + customer_id + ", insurance_name="
+				+ insurance_name + ", insurance_type=" + insurance_type + "]";
+	}
 	
 }

@@ -24,64 +24,48 @@ public class InsuranceController {
 	
 	
 	// Get All Insurances 
+	// For convenience
+	
 	@GetMapping("/insurances")
 	public List<Insurance> showInsurance() {
 		return this.service.getAllInsurances();
 	}
 	
 	// Create New Insurance	
+	
 	@PostMapping("/add")
-	public void addInsurance(@RequestBody Insurance insurance) {
+	public Insurance addInsurance(@RequestBody Insurance insurance) {
 		this.service.addInsurances(insurance);
+		return null;
 	}
 	
 	
 	// Update Existing Insurance
+	
 	@PutMapping("/update")
-	public void editInsurance(@RequestBody Insurance insurance) {
+	public Insurance editInsurance(@RequestBody Insurance insurance) {
 		this.service.updateInsurances(insurance);
+		return null;
 	}
 	
-// Using Request Params
-	
-//	@GetMapping("/get")
-//	public Insurance getInsurance(@RequestParam String iId,@RequestParam String cId) {
-//		if (iId.equalsIgnoreCase(""))
-//			return this.service.findInsuranceByCId(cId);
-//		else if (cId.equalsIgnoreCase(""))
-//			return this.service.findInsuranceByIId(iId);
-//		else 
-//		    return this.service.findInsuranceByIIdandCId(iId,cId);
-//	}
 	
 // Using Model Attribute	
 	
 	@GetMapping("/get")
 	public Insurance getInsurance(@ModelAttribute("insurance_id") String iId,@ModelAttribute("customer_id") String cId) {
 		
-		if ((iId.equalsIgnoreCase(""))&&(cId.equalsIgnoreCase(""))) {
-//			return this.service.noQueryParams();
-			throw new MissingQueryParam();
+		if ((iId.length() != 0)&&(cId.length() != 0)) {
+			return this.service.findInsuranceByIIdandCId(iId,cId);
 		}
 
-		else if (iId.equalsIgnoreCase(""))
+		else if (cId.length() != 0)
 			return this.service.findInsuranceByCId(cId);
 		
-		else if (cId.equalsIgnoreCase(""))
+		else if (iId.length() != 0)
 			return this.service.findInsuranceByIId(iId);
 		
 		else
-			return this.service.findInsuranceByIIdandCId(iId,cId);
+			return this.service.throwMissing(iId, cId);
 	}
-	
-	
-	
-	
-	
-//	@GetMapping("/get")
-//	public String getInsurance(@RequestParam String id) {
-//		return id;
-//	}
-//	
 
 }

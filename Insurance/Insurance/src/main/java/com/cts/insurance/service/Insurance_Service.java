@@ -8,9 +8,9 @@ public interface Insurance_Service {
 	
 	public List<Insurance> getAllInsurances();
 
-	public void addInsurances(Insurance insurance);
+	public Insurance addInsurances(Insurance insurance);
 
-	public void updateInsurances(Insurance insurance);
+	public Insurance updateInsurances(Insurance insurance);
 
 	public Insurance findInsuranceByCId(String cid);
 
@@ -18,8 +18,6 @@ public interface Insurance_Service {
 
 	public Insurance findInsuranceByIIdandCId(String iId, String cId);
 
-//	public Insurance noQueryParams();
-
-	
+	public Insurance throwMissing(String iId, String cId);
 	
 }
