@@ -1,0 +1,120 @@
+Using a XML Schema file applications can validate the XML that they exchange with other applications
+
+What is XML Schema ?
+A XML Schema defines the grammar or blueprint of a XML document.
+We can use the XML Schema to mention what elements can be there in a XML file.
+Starting from elements,attributes,namespaces,order and the number of the occurrence of each elements
+to restricting the data inside the XML document only to certain values. All these can be done using the XML Schema.
+
+A XML file following a schema file is known as a VALID XML DOCUMENT.
+
+A XML schema definition is also a XML file with a .xsd extension. Instead of xml it will have a .xsd which stands for
+XML Schema Definition.
+
+For example if we have a Order.xml file , we can have an order.xsd which says what elements can be there and also the order of the elements in Order.xml
+
+Why do we need XML Schema ? 
+XML Schema file is a contract between tow XML users.
+app1 and app2 are exchanging xml messages without XML schema definition, 
+app1 might send any data to app2 and app2 won't even care or won't understand and vice-verca.
+
+That is why XSD is required. app1 and app2 agrees on the contract by defining all the elements and attributes inside the XML schema definition.
+
+XSD is required to validate XML anywhere and everywhere.
+
+elementFormDefault="qualified" - each and every element in our xml file which follows the xsd i.e the schema should be prefixed with namespace.
+elementFormDefault="unqualified" - no need of giving namespace in each of the elements
+
+
+XML Schema Types
+1. Inbuilt Types - developed by W3C
+				   int,decimal,string,date,datetime --> these are used to build the schema document and mention our element should be made using one of these types.
+				   
+2. Simple Types - Say we want to restrict a string to 15 characters. We can use string (inbuilt type) and then we can use a restriction from the XML schema and we can create a simple type. 
+				  And then we can use the simple type when we define the elements inside.
+				  Example: <element name="name" type="String15Chars"/>
+				  
+3. Complex Types - Complex Types are elements which can have other elements inside.We can create complex types by using the inbuilt types or simple types	or other complex types i.e the the combination of these three.
+	  
+Schema Data types(defined by w3C ; known by all xml parsers)
+
+Number Type
+byte - 8bit
+short - 16bit
+int - 32bit
+long - 64bt
+decimal - float
+unsignedByte etc.
+
+Date Types
+data - defines date value
+dateTime - date and time
+time - time value
+gDay,gMonth
+
+String Types
+string
+
+All these inbuilt data types are used to create Simple schema types using XML schema restrictions
+same for Complex types.
+
+Namespaces 
+
+Namespaces uniquely identify the elements and attributes of a XML document.
+
+Let's say we are creating schema files for Amazon.com and ebay.com to handle orders
+
+1st step: Assign a target namespace for all the elements in amazon's order
+using a url is good practice for targetNamespace.
+
+targetNamespace: http://www.amazon.com/order
+				 http://www.ebay.com/order
+
+2nd step: Assign a prefix instead of using the entire URL to qualify each element in XML Schema 
+
+prefix: 
+
+xmlns:amz = "http://www.amazon.com/order"
+xmlns:ebay="http://www.ebay.com/order"
+
+The XML document should also use the exact namespace
+
+for example:
+
+root element for order for amazon will have a prefix:
+
+<order xmlns:amz="http://www.amazon.com/order">
+<amz:lineitem/>
+<amz:shippingaddress/> 
+
+All other elements within the root element will qualify through the prefix.
+
+xmlns="http://www.w3.org/2001/XMLSchema" -
+It indicates that the elements and data types used in the schema come from the "http://www.w3.org/2001/XMLSchema" namespace. 
+It also specifies that the elements and data types that come from the "http://www.w3.org/2001/XMLSchema" 
+
+<sequence></sequence> - The elements should be in the exact same order in the XML file as specified in the XSD file atleast once.
+
+<choice></choice> - This tag tells the user that only one element should be there. No need of the other element to be there.
+
+<all></all> - All elements should be there for atleast once but order of the elements does not matter.
+
+Controlling the number of element occurrences 
+By default all the elements that we have defined in the XSD should appear for once and only once.
+minOccurs=0 --> by putting it in an element,it means the element is optional. By default it is 1. 
+maxOccur=n --> by putting it in an element,it means the element can appear n no of times.[unbounded - infinite]
+
+Attribute -
+Syntax: 
+<attribute name="attribute_name" type="inbuiltType/SimpleType"/>
+By default any attribute we add to the XML file is optional. 
+use="required" will make the attribute required.
+
+Including and Importing other schemas
+<include schemaLocation="fileName.xsd"/>
+
+Importing elements from different namespace
+<import schemaLocation="file name"	namespace="namespace of the xsd file we want to import" />
+
+
+	  

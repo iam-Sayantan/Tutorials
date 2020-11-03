@@ -1,0 +1,80 @@
+XML Parser is a software that provides an API (Application Program Interface) 
+that we developers use when we build our application and it makes our job very easy 
+to read and write XML document. It checks the well-formedness of the XML file
+and validate the XML against a schema file if it has one.
+
+Types of Parser
+1. DOM --> Tree Based
+2. SAX --> Event Based
+3. STAX --> Pull Based
+
+There are several parsers available in the market. We can use anyone of them but we cannot learn new 
+mechanisms each time there is a new parser available in the market.
+
+JAXP --> Java API for XML Parsing.
+It is a standard from oracle.Oracle defines an API 
+which we as developers learn and this API is implemented by 
+the parser implementors. So anyone who wants to create a XML parser for 
+the Java world will implement the JAXP standard.JAXP standard also defines a specification which is 
+a set of rules in plain English for parser implementations.
+
+Current version is JAXP is 1.6
+Starting 1.4 JAXP has STAX support.
+
+DOM Parser 
+DOM stands for Document Object Model. 
+
+Advantages
+A DOM Parser loads the entire XML document into the system's memory and then it gives us hierarchical
+access to the entire XML document. The advantages of a DOM parser or when to use we need to access different 
+parts of the XML in our program in the same time. It is hierarchical.
+
+Disadvantages
+When we have strict memory issues, we cannot load the entire XML document.
+That is when you shouldn't use a DOM parser. 
+The DOM standard is defined by World Wide Web Consortium.
+
+
+If we go to our DriversLicense.xml in the Eclipse IDE,if we use a DOM parser to parse this XML document,
+the DOM parser will load the entire XML document into memory. 
+And then you can access any element within this XML by using the methods available in the DOM parser API.
+We'll first access the, access a element by its name or we can access this root element and 
+then we can get it's child elements and go down the hierarchy.
+
+The famous DOM API classes in interfaces are Element, NodeList and Node and methods like getChildNodes
+and getTextContent.
+
+
+SAX Parser - Simple API for XML Parsing
+
+Advantages
+
+SAX parser is event based.
+
+That is, as soon as it hits elements in the XML it will fire an event that it has hit the start element, 
+it has hit a certain element, it has reached the end of the document, it has reached an attribute and so on.
+
+It will give us the details of what it has reached so that we can take that data and deal with it.
+SAX fires events and then it forgets about them. So it has very less memory footprint.
+It doesn't load the entire document in memory like DOM does.
+
+Disadvantages
+
+SAX is read only. We cannot write XML documents using a SAX parser.
+
+It fires events our application or our program doesn't have much control on what data we need.
+The SAX parser just starts right from the beginning of the document and it keeps firing events as it
+goes through the document.
+
+If we use a SAX parser to parse this DriversLicense.xml, the SAX parser will hit or will fire a event
+as soon as it hits this DriversLicense element. And it tells us what the element is and the attributes on it.
+And then when it hits the next element, the Number which is a child element of DriversLicense, it tells
+us that it has reached that element.Similarly, when it reaches the end of an element, 
+for example the end of DriversLicense or even end of FirstName, it fires another event. 
+So it is an event based parser and we handle the event. 
+It fires an event, we handle it and the SAX parser forgets about that event.
+ So it has very less memory footprint because it doesn't load the entire XML into memory.
+ 
+ The frequently used methods and elements are startElement, endElement and characters
+
+

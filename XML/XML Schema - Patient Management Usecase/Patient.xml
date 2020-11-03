@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Patient xmlns:tns="http://www.sanjivani.org/Patient"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://www.sanjivani.org/Patient Patient.xsd " id="1">
+ 
+ 
+  <tns:name>Sayantan</tns:name>
+  <tns:age>22</tns:age>
+  <tns:email>sayantansengupta98@gmail.com</tns:email>
+  <tns:gender>M</tns:gender>
+  <tns:phone>8902656153</tns:phone>
+  <tns:payment-type>
+    <tns:insurance>
+    	<tns:limit>10000</tns:limit>
+    	<tns:provider>LIC</tns:provider>
+    </tns:insurance>
+  </tns:payment-type>
+</tns:Patient>

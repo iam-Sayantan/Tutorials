@@ -1,0 +1,38 @@
+ Simple schema another way to validate you attack 
+ some other file is by using data type definition or DTD.
+ 
+ 
+<!ELEMENT email (to,subject,body)>  - email is the root element; 'to','subject','body' are the child elements
+<!ELEMENT to (#PCDATA)> - The element 'to' needs content
+
+#PCDATA means parseable character data.
+
+The elements index similar document should occur in the exact order that we specify right in the dtd file.
+
+<!ELEMENT email (to | (subject,body))> - 
+This means the XML can either contain the 'to' 
+element or the '(subject,body)' elements
+but not all three at the same time.
+
+Occurrence Indicators
+The indicators will tell about the occurrences of the elements.
+
++ allows an element to appear one or more times within a parent element 
+* allows the element to appear zero or more types within the parent element 
+? allows the element to appear 0 or just once within the parent element. The element is optional but if it is included it cannot repeat.
+
+
+study case
+
+<!ELEMENT course (#PCDATA | name | price |rating)*> : Mixed Content;
+This element can occur as many times it wants or 0 times also in any order.
+
+
+Define attributes for any example element within you a DTD
+#REQUIRED - to make it mandatory
+#IMPLIED - to make it implied 
+#FIXED - to make that value a constant or fixed
+
+
+
+ 

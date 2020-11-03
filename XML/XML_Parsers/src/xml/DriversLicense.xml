@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<DriversLicense status="suspended">
+	<Number>12345</Number>
+	<FirstName>Bharath</FirstName>
+	<LastName>Thippireddy</LastName>
+	<DateOfBirth>18/may/1981</DateOfBirth>
+	<VehicleType>Car</VehicleType>
+	<DateOfIssue>11/june/2012</DateOfIssue>
+	<ExpirtyDate>11/june/2015</ExpirtyDate>
+	<Photo location="servername/filename" />
+	<Address>
+		<street>stevens dr</street>
+		<city>king of prussia</city>
+		<state>PA</state>
+		<country>USA</country>
+		<zipcode>19406</zipcode>
+
+	</Address>
+
+</DriversLicense>
+
+	

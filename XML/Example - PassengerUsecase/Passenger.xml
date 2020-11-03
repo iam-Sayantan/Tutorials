@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Passenger xmlns:tns="http://www.makemytrip.org/Passenger" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.makemytrip.org/Passenger Passenger.xsd ">
+  <tns:name>tns:name</tns:name>
+  <tns:dob>2001-01-01</tns:dob>
+  <tns:seatno>0</tns:seatno>
+  <tns:gender>tns:gender</tns:gender>
+</tns:Passenger>

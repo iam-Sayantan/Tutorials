@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.amzaon.org/Orders" xmlns:tns="http://www.amzaon.org/Orders" elementFormDefault="qualified">
+
+<element name="Orders" type="tns:Orders"/>
+
+<complexType name="Orders">
+	<sequence>
+		<element name="Products" type="tns:Products" maxOccurs="unbounded"/>
+		<element name="Customer" type="tns:Customer"/>
+	</sequence>
+	
+	<attribute name="id" type="int" />
+	
+</complexType>
+
+
+
+<complexType name="Products">
+	<sequence>
+		<element name="name" type="string"/>
+		<element name="description" type="string"/>
+		<element name="price" type="int"/>
+		<element name="category" type="string"/>
+	</sequence>
+	
+	<attribute name="id" type="int" />
+	
+</complexType>
+
+<complexType name="Customer">
+	<sequence>
+		<element name="name" type="string"/>
+		<element name="phone" type="string" minOccurs="0"/>
+	</sequence>
+	
+	<attribute name="id" type="int" />
+	
+</complexType>
+
+<simpleType name="id">
+	<restriction base="int">
+		<maxInclusive value="50"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="String20Chars">
+	<restriction base="string">
+		<maxLength value="20"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="String100Chars">
+	<restriction base="string">
+		<maxLength value="100"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="category">
+	<restriction base="string">
+		<enumeration value="electronics"/>
+		<enumeration value="books"/>
+		<enumeration value="shoes"/>
+	</restriction>
+</simpleType>
+
+
+</schema>
+

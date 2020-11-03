@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Orders xmlns:tns="http://www.amzaon.org/Orders" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.amzaon.org/Orders Orders.xsd ">
+  <tns:Products>
+    <tns:name>apple iPhone XI</tns:name>
+    <tns:description>very good</tns:description>
+    <tns:price>14141414</tns:price>
+    <tns:category>Mobile</tns:category>
+  </tns:Products>
+  <tns:Products>
+  	<tns:name>Ranit</tns:name>
+  	<tns:description>bad</tns:description>
+  	<tns:price>123465</tns:price>
+  	<tns:category>human</tns:category>
+  </tns:Products>
+  <tns:Customer>
+    <tns:name>Sayantan</tns:name>
+    <tns:phone>123456789</tns:phone>
+  </tns:Customer>
+</tns:Orders>

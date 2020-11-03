@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.makemytrip.org/Passenger" xmlns:tns="http://www.makemytrip.org/Passenger" elementFormDefault="qualified">
+
+
+<element name="Passenger" type="tns:Passenger"/>
+
+<complexType name="Passenger">
+	<sequence>
+		<element name="name" type="string"/>
+		<element name="dob" type="date"/>
+		<element name="seatno" type="int"/>
+		<element name="gender" type="string"/>
+	</sequence>
+</complexType>
+
+
+</schema>

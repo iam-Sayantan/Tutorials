@@ -1,0 +1,28 @@
+XSLT: Extensible Stylesheet Language Transformations.
+
+It is a collection of two technologies, namely XSL and XPATH. 
+
+XSL stands for Extensible Stylesheet Language 
+and 
+XPATH as the name itself says,
+It shows us the path or it tells when to do a particular transformation or 
+when to apply a particular transformation.
+
+So XSL tells what to do and XPATH tells when to do that. 
+And the XSLT processor is the one which does the transformations for us.
+
+So if we have one kind of XML document and if we want to transform it into either a different type of
+XML document or into HTML,we will pass it along to a XSLT processor.
+We will feed that XSLT processor with the XSL stylesheet (also a XML document) that we will be developing.
+
+
+let's say we are developing a shopping application. 
+And this shopping application use XML, Order.xml which has an ORDERID in it.
+
+Now let's say we have to integrate with a third party application to
+ship all the products that our customers buy on our shopping portal.We have to send the entire order or atleast
+the shipping information as XML to this shipping app.And if this shipping application is expecting an ID. 
+Instead of ORDERID in the XML, it simply expects an ID. XSLT comes into picture.
+
+Similarly, the news portal can transform the XML that is stored in a document repository 
+to HTML which is very powerful.

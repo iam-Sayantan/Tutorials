@@ -1,0 +1,114 @@
+XML Notes
+
+Case Study --> DriversLicenseXML
+
+Fields used in this case study -->
+1. Number
+2. FirstName
+3. LastName
+4. DateOfBirth
+5. VehicleType
+6. DateOfIssue
+7. Photo
+8. ExpiryDate
+9. Address 
+	i.	 Street
+	ii.	 city
+	iii. State
+	iv.  Country
+	v.   Zipcode
+	
+
+Prolog
+Every XML document starts with a declaration also called as PROLOG statement.
+The very first line in every XML document is a XML declaration.
+IDEs like Eclipse create that line by default.
+Starts with a less than symbol and ends with greater than symbol.
+These symbols tells the XML Parser or the processor that it is not the actual XML document or elements and attributes in the XML document.
+Rather it is a processing instruction.
+We can also have other type of processing instructions such as style-sheet etc
+The XML tells the XML parser that this element is from the XML specification and not style-sheet.
+The current version we are using is 1.0
+
+
+ENCODING ATTRIBUTE
+
+Encoding is used to specify a character set that we are going to use to represent the text within our XML file.
+By default it is UTF-8.
+Other character sets like UTF-16 can also be used which represent most of the characters.
+ISO-8959-1 to ISO-8859-9 , ISO-2022-JP , Shift_JIS , EUC-JP are also used.
+
+Character Sets and Character Encoding - https://www.w3.org/International/questions/qa-what-is-encoding.
+
+Standalone Attribute - This attribute is included in the prolog statement. It tells whether this XML document exists on its own or whether it can use documents from outside like XML Schema.
+It has a value of either YES or No.
+YES --> No external documents
+NO --> External documents
+Default value is NO
+
+Root Element
+Element is the heart of the XML document. Comprised of one or more elements nested within each other.
+It should always have a root element.
+
+DriverLicense is the root element here. We can nest multiple other elements or we can have textual data. 
+
+Naming conventions when we create elements.
+
+1. Start and Ending tags must be identical.
+2. Names are case sensitive
+3. An element name can contain alphanumeric characters.
+4. The only punctuation mark allowed in names are hyphen(-), underscore(_), and period(.)
+
+Child Elements
+
+The root element encloses all the child elements. Hence the root element is also known as Parent Element.
+There can be n number of child Elements.
+
+Attributes
+They don't carry the actual data but they qualify the data and add some special meaning to the elements.
+To summarize attributes are name value pairs. Names always follow the same naming convention as the elements and the values should always be within quotes.
+
+Empty Elements
+Elements that do not enclose any child elements or text data are called Empty Elements.
+In our DriverLicense case study , the photo element is an empty element having the only attribute "Location" stating the location of the photo.
+They add value only by attributes but these elements should be closed always.
+
+We can use one short hand notation though
+<Photo location="servername/filename"/> instead of <Photo location="servername/filename"></Photo>
+
+Comments
+Syntax: <!-- comment -->
+Statements in XML file that are skipped by XML Parser.
+
+Character Entities
+
+To use the following characters or the predefined entities inside the text of the XML document
+
+<  -->  &lt;
+>  -->  &gt;
+&  -->  &amp;
+'  -->  &quot;
+"  -->  &apos;
+
+CDATA Blocks
+Using the CDATA blocks we can use any text , any characters inside our XML document. 
+Syntax: <![CDATA[  ]]>
+This blocks are used to give example. We can include an entire XML document here or a piece of our XML document.
+These CDATA blocks will be ignored by the XML Parser.
+
+Nested Elements
+
+In the following study case , street,city,state,country,zip code are the child elements of the Address element and grand children of the DriverLicense element.
+Therefore XML is a hierarchical document.
+
+Well-Formedness Rules
+
+In the following study case, 
+
+1.Root Element - DriverLicense
+2.Every element has a closing tag
+3.Elements are properly nested
+4.XML tags are case sensitive
+5.Attribute values are quoted
+
+
