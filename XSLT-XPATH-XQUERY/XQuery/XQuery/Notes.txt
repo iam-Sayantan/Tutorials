@@ -1,0 +1,52 @@
+XQUERY
+
+XQuery is a functional language to read and transform a XML document.
+It uses a syntax which is a little similar to that of SQL. While SQL goes against a relational
+database, XQuery goes against a XML document or even a HTML document which is well formed.
+So it grabs the name XML Query, that is what XQuery stands for. And that query portion is from SQL which stands
+for Structured Query Language. The XQuery standard is maintained by World Wide Web Consortium and
+the current version is 3.0. Like in case of XSLT when you worked with XSLT, we use XPath to locate
+the nodes even while working with XQuery. The XQuery language provides looping constructs, conditional
+statements, classes which are similar to SQL classes, where, order by and several functions
+like substring, uppercase etc. We develop a XQuery program using all these syntax or constructs.
+And then we use a XQuery engine like Zorba or SAXON or XQengine which can run the XQuery program against
+a given XML and it will transform that XML by taking the instructions we provide in the program.
+In this course, you will be using the SAXON parser which is a free open source XQuery engine, you will
+be using a Java version of it.
+
+
+FLWOR
+
+Although it's spelled FLWOR, it pronounced as flower and it's a popular way to remember all the important
+constructs in the XQuery language. F stands for the for construct which allows us to select a collection
+of nodes in the XML document and loop through them. L for let puts the result or assigns a value to a XQuery
+variable, using let we can do that. W for where clause. It selects the nodes specified by the condition
+which we mention when we use the where clause. O for order by, orders the nodes specified as per the
+criteria.
+It takes the given criteria and it orders them as per that. Finally, R for return.
+It is used to return the final result of our XQuery program.
+
+For,Where,Return (based on the books.xqy)
+
+Go to Eclipse.
+
+Right now the XQuery we have is displaying the entire book details. To display just the title use XPath expression
+at the end, title.
+Once you know XPath, it's very easy to learn JQuery. Run this again.
+It should display just the titles this time.
+There are two books, their titles are XML and XML Schema Definition in easy steps and XSLT, XPATH
+and XQuery fundamentals. To do the very same thing using JQuery, start using the for loop.
+At the very beginning, for $x, represents a variable, in.
+Load the Books.xml. The XPath should be only up to books/book.
+So we are saying for each book. The for loop will loop through all the book elements here and it will put
+one book at a time into this $x
+where $x, we are filtering out, slash, price<40.
+That is the condition we had earlier.
+We have to return $x/title.
+This is the XPath expression. Once again, $x represents the book node, each book node as the for loop
+loops through. And we are returning, using the return statement,
+we are returning $x/title. Run this. And it produces exactly the same result which we had earlier.
+But this time we have used JQuery syntax instead of just the XPath.
+
+
+Order by $x/title 

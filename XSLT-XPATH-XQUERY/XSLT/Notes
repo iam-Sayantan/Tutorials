@@ -1,0 +1,94 @@
+ XSLT - Extensible Stylesheet Language Transformations.
+ 
+Using XSLT we can transform a XML document into another XML with a different format or a different
+data format altogether such as HTML. XSLT is a combination of two powerful technologies, XSL and XPath.
+
+XSL - Templates/Instructions
+XPATH - Locate/Address the nodes.
+
+The XSL provides templates and instructions to tell the
+XSLT processor how it should process the XML into another XML or HTML.
+And XPath is used to address or locate certain node in the XML document.
+
+			 XSL & XPATH
+XML -----> [XSLT PROCESSOR] -----> XML / HTML
+
+To summarize, XSLT is a technology which is a combination of XSL and XPath 
+using which we can transform an XML into another XML or HTML. The XSLT processor knows how to do it,
+if we give it the XML and XSL stylesheet.
+
+
+Why do we need XSLT ?
+
+Usecases
+
+1. XML into XML (different formats)
+
+Let's say we are all together working on a shopping application.
+We are developing a online shopping app which uses XML to transfer the order information to a shipping
+application.
+The customer will browse for the products and he will check out on our shopping app.
+This app inturn uses a shipping application within our company which is responsible for shipping out
+the order. Here is the XML format that the shopping app uses internally. It has ORDER as the
+root element and a ORDERID.
+
+So it sends the ORDERID to the shipping app but the shipping application developed by another team
+has its own set of XML elements and they represent the ORDERID as ID. That is where XSL comes
+in and using a XSL style sheet,the development team on the shipping app can translate the ORDERID that comes in, into ID. 
+So they can transform this XML into a XML they want. Or we can do it on the shopping app end too. 
+We can write the XSL stylesheet and we can translate it into an XML that the shipping app understands.
+
+2. XML into HTML
+
+A news application, which pulls the news from all over the world, different sources as XML.
+And it stores it into a Documentum repository. And at a point later on when the users or the clients
+access the news portal from their browser, this application will retrieve the XML, apply a XSL style
+sheet and convert it into HTML. Because the browser understands HTML and the end user wants to see rich
+text and not XML.
+
+Node Tree
+
+Usecase : Order.xml
+
+The XSLT processor represents an XML document as a Node Tree even before it starts working on the
+transformation.
+
+Here is how our Order XML will look like in the Node Tree. 
+Order is the root node, followed by the attribute of the Order which is the Id and 
+then all the element notes which are the child or children nodes of the Order root element. 
+And then the text nodes, the values of each element are represented as text nodes.
+So you need to remember that everything in the XML document is a node for the XSLT processor.
+And even before it starts processing the XSL stylesheet and the instructions in it,
+it will represent the XML document as a Node Tree.
+
+Create XSL
+
+In this lecture you will create your first XSL document which will transform this Order.xml into
+HTML, one step at a time.
+Minimize this Order.xml by double clicking on it. 
+Right click on the XSLT Project, 
+New, go to Other and Eclipse has inbuilt support to create XSL documents. 
+Go to XML here or simply type in xsl in the Wizards.
+Select the XSL wizard from XML.( An XSL an Excel document is a XML document with a .xsl extension)
+Change the filename from new stylesheet to Order.xsl, Finish. Eclipse generates a few elements for us.
+The very first line of every XML document is the xml declaration or a prologue. 
+Any XML document can have one and only one root element. 
+In case of XSL stylesheet it is the stylesheet element. This element has two attributes,
+the version which tells the current version of XSLT, 
+the version that this document is using which is 1.0. 
+The second attribute we use to specify a prefix for the XSLT namespace.
+So this URL is a namespace where all these elements, the stylesheet element, the template element and
+any other elements you will be using later on in this stylesheet, belong to this namespace.
+
+The World Wide Web Consortium W3C has defined this namespace. 
+A namespace uniquely identifies a set of elements in a XML document.
+
+All these elements, the xsl:stylesheet, the template are understood by a XSLT processor and it knows what to do
+when it encounters each one of them.
+
+Root element.
+<xsl:template match="/"></xsl:template> is the Root element.
+
+Right click on the XML document, Run As -> XSL transformation.
+Here we need to select the xsl stylesheet that needs to be applied. Click on Add files, browse to
+the file under XSLT project, Order.xsl, hit Ok.

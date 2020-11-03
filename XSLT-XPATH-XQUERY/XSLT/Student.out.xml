@@ -1,0 +1,23 @@
+<html>
+<body>
+				College name:
+				<b>Stanford</b>
+<table border="1">
+<tr>
+<th>First Name</th><th>Last Name</th><th>Score</th><th>Grade</th>
+</tr>
+<tr>
+<td>Donald</td><td>Trump</td><td>70</td><td><b>Grade C</b></td>
+</tr>
+<tr>
+<td>Hillary</td><td>Clinton</td><td>70</td><td><b>Grade C</b></td>
+</tr>
+<tr>
+<td>Amitabh</td><td>Bachan</td><td>85</td><td><b>Grade B</b></td>
+</tr>
+<tr>
+<td>Tom</td><td>Cruise</td><td>90</td><td><b>Grade A</b></td>
+</tr>
+</table>
+</body>
+</html>

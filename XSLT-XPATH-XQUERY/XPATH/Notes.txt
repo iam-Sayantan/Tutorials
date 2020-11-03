@@ -1,0 +1,63 @@
+XPath expression that can be used to retrieve the ItemId which is a child of
+Item and grandchild of Order. This syntax is very similar to that of a URL. 
+
+Ex - 
+	/Order/Item?ItemId
+	
+XPath can be used with XSLT, Xquery as well as in several different programs where we want to
+easily navigate a XML or even HTML. 
+For example, Web application test automation team or the automation 
+testers use XPath to locate a particular node in the HTML.
+They do that using browser plugins.
+Then they use that XPath inside their automation programs which can be written in Java, DotNet, Python,
+etc. XPath offers several functions to manipulate strings, numbers and even boolean values.
+
+To access the current node we can use the dot. 
+Dot is the XPath syntax. This is very similar to how you access the directories
+on a file system. Directory, the current directory is represented using dot.
+In case of XSLT, dot represents the current node that is being processed.
+
+
+Relative Addressing 
+We have used dot that represents the
+current node, ../ is relative to the current node but it goes to the parent node.
+Similarly, ./ is relative to the current note and it goes to the child element or the child node of
+the current node. 
+
+Absolute Addressing
+When we use absolute processing or absolute addressing, we use forward slash. For example, here in customer
+name instead of using dot I can use /Order, if you go to the XML, Order and then the CustomerName.
+So the Order/CustomerName.
+This is absolute addressing. It always starts with a forward slash representing the root element, then
+the hierarchy.
+I can also similarly do Order slash Item slash ItemId, ItemName, etc.
+Go back to the xsl, save it. Run it, run the test again, XPATH.
+The output should still be the same as before.
+
+
+XPath provides three different functions to round off decimal point numbers. They are ceiling, floor
+and round. ceiling will round off a decimal number to the next integer value. 
+Floor will round it off to the previous integer value and
+round will round it off depending on where that decimal number currently is.
+
+Extracting Substring
+
+XPath gives us substring functions which can be used to break down a given XML text node
+into subtext nodes or substrings.
+The first one is called substring and this function takes three parameters.
+The first one is the XPath expression that qualifies the XML attribute or XML element.
+The second one is the start position from which we want the substring and then the third parameter is
+the number of characters.
+So this substring method will take a XML node and it will calculate the substring for it, starting
+from the given position up to the number of characters we ask it
+or we provide. The second one is called substring-before. As the name itself says, it takes the
+XPath expression that qualifies a XML text node.
+And the second parameter is a character in the given text node.
+And it will calculate a substring or it'll derive a substring in the given string upto that character or before
+that given character. Last is substring-after. As the name itself says,
+this does the opposite of before. It takes a text node qualified by the given XPath expression and
+it will derive a substring of it after the given character till the end of the string.
+
+NOTE
+Text node indexing starts from 1.
+
